@@ -1,0 +1,548 @@
+/* ========================= */
+/* 🌍 Réinitialisation et Styles Globaux */
+/* ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0f0f1b;
+    color: white;
+    scroll-behavior: smooth;
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+    text-align: center; /* Centre tout le texte par défaut */
+}
+
+/* ========================= */
+/* 🎨 Barre latérale */
+/* ========================= */
+.sidebar {
+    width: 280px; /* Légèrement élargie */
+    background-color: #1a1a2e;
+    color: white;
+    padding: 25px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 3px solid #ff2e63;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: #ff2e63;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+}
+
+.sidebar nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    width: 95%;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background-color: #ff2e63;
+    color: black;
+    font-weight: bold;
+    transform: scale(1.08);
+}
+
+/* ========================= */
+/* 📜 Contenu Principal */
+/* ========================= */
+.content {
+    margin-left: 280px;
+    flex-grow: 1;
+    padding: 40px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+/* ========================= */
+/* 📌 Sections */
+/* ========================= */
+.section {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ========================= */
+/* 🎯 Titres */
+/* ========================= */
+h1 {  
+    color: #e01e4f;  
+    font-size: 2.5em; /* Taille réduite pour h1 */  
+    font-weight: bold;  
+}  
+
+h2 {  
+    color: #ff2e63;  
+    font-size: 2em; /* Taille réduite pour h2 */  
+    margin-bottom: 30px;  
+}
+
+/* ========================= */
+/* 🕒 Horloge */
+/* ========================= */
+.clock {
+    font-size: 3em; /* Agrandie */
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 100%;
+    border-bottom: 3px solid #ff2e63;
+    text-shadow: 0 0 12px rgba(255, 46, 99, 0.8);
+}
+
+/* ========================= */
+/* 📌 Section Profil (Taille inchangée) */
+/* ========================= */
+.profil-text p {
+    font-size: 18px;
+    color: #dcdcdc;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* ========================= */
+/* 🎯 Parcours Professionnels */
+/* ========================= */
+.timeline-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.timeline-item {
+    width: 100%;
+    max-width: 700px;
+    background: #1a1a2e;
+    padding: 20px;
+    border-left: 6px solid #ff2e63;
+    box-shadow: 0 0 8px rgba(255, 46, 99, 0.5);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.timeline-content h3 {
+    font-size: 22px;
+    color: #ff2e63;
+}
+
+.timeline-content p {
+    font-size: 18px;
+    color: #dcdcdc;
+}
+
+/* ========================= */
+/* 📋 Section Projets */
+/* ========================= */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.project-card {
+    background: #1e1e2f;
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-card h2 {
+    font-size: 1.4em;
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    font-size: 1em;
+    color: #dcdcdc;
+}
+
+/* ========================= */
+/* 📋 Bouton Voir Mon CV */
+/* ========================= */
+.cv-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.cv-section h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff2e63;
+    margin-bottom: 30px;
+}
+
+.cv-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #ff2e63, #e01e4f);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    text-decoration: none;
+    box-shadow: 0 5px 12px rgba(255, 46, 99, 0.4);
+}
+
+.cv-button i {
+    font-size: 1.4em;
+}
+
+.cv-button:hover {
+    transform: scale(1.12);
+    background: linear-gradient(45deg, #e01e4f, #ff2e63);
+    box-shadow: 0 7px 18px rgba(255, 46, 99, 0.6);
+}
+
+.cv-button:active {
+    transform: scale(0.98);
+}
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #0f0f1a;
+    color: #fff;
+    display: flex;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+/* --- Barre latérale --- */
+.sidebar {
+    width: 250px;
+    background-color: #111;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    color: #e60073;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #e60073;
+    border-radius: 5px;
+}
+
+/* --- Contenu principal --- */
+.content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Section Contact --- */
+.contact-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e60073;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #ff4081;
+    margin-bottom: 40px;
+}
+
+/* --- Conteneur du contact --- */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* --- Formulaire --- */
+.contact-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 0, 100, 0.5);
+    width: 400px;
+    text-align: center;
+    position: relative;
+    top: -30px; /* Remonte le formulaire */
+}
+
+.contact-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-table input,
+.contact-table textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.contact-table textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contact-table button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e60073;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-table button:hover {
+    background-color: #ff4081;
+}
+
+/* --- Informations de contact --- */
+.contact-info {
+    text-align: center;
+    width: 350px;
+}
+
+.contact-info h3 {
+    color: #ff4081;
+    font-size: 1.4rem;
+    margin-top: 15px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.contact-info a:hover {
+    color: #ff4081;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-container, .contact-info {
+        width: 90%;
+    }
+}
+/* ========================= */
+/* 🎯 Effet d'Apparition */
+/* ========================= */
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================= */
+/* 🌠 Étoiles Filantes */
+/* ========================= */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: shootingStar linear infinite;
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-200px) translateY(200px);
+        opacity: 0;
+    }
+}
+
+/* ========================= */
+/* 📜 Effet de Texte Machine à Écrire */
+/* ========================= */
+.typing-text {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff2e63;
+    text-align: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ff2e63;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+/* ========================= */
+/* 📌 Bouton Contact Secousse */
+/* ========================= */
+.contact-table button {
+    transition: transform 0.2s ease-in-out;
+}
+
+h1 {  
+    color: #e01e4f;  
+    font-size: 2.5em; /* Taille réduite */  
+    font-weight: bold;  
+    margin-top: 0; /* Supprimez la marge supérieure */  
+}  
+
+h2 {  
+    color: #ff2e63;  
+    font-size: 1.5em; /* Taille réduite */  
+    margin-top: 10px; /* Ajustez selon vos préférences */  
+    margin-bottom: 20px;  
+}  
+
+p {  
+    font-size: 1em; /* Taille de texte plus petite pour les paragraphes */  
+    margin-top: 10px; /* Ajustez si besoin */  
+}
+
+p {  
+    font-size: 0.9em; /* Taille plus petite pour les paragraphes */  
+    margin-top: 10px;   
+}  
+
+.card-title {  
+    font-size: 1.2em; /* Taille des titres des projets */  
+}  
+
+.card-text {  
+    font-size: 0.8em; /* Taille des descriptions des projets */  
+}  

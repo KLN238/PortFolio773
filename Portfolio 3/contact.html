@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio de Kilian</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Icônes FontAwesome -->
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Barre latérale -->
+        <div class="sidebar">
+            <div id="clock" class="clock"></div> <!-- Horloge -->
+            <h2>Mon Portfolio</h2>
+            <nav>
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="profil.html" class="nav-link">Mon Profil</a>
+                <a href="apropos.html" class="nav-link">À propos</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="epreuve.html" class="nav-link">Épreuve</a>
+                <a href="projets.html" class="nav-link">Projets</a>
+                <a href="veille.html" class="nav-link">Veille Technologique</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="content">
+            <section id="contact" class="section">
+                <h1 class="contact-title">Contact</h1>
+                <h2 class="contact-subtitle">Mes coordonnées</h2>
+
+                <div class="contact-wrapper">
+                    <div class="contact-container">
+                        <h2>Contactez-moi</h2>
+
+                        <!-- Formulaire de contact avec EmailJS -->
+                        <form id="contact-form" class="contact-table">
+                            <input type="text" id="name" placeholder="Votre Nom" required>
+                            <input type="email" id="email" placeholder="Votre Email" required>
+                            <textarea id="message" placeholder="Votre Message" rows="5" required></textarea>
+                            <button type="submit">Envoyer</button>
+                        </form>
+                        <p id="response-message" style="color: #ff4081; font-size: 1.2rem; text-align: center;"></p>
+
+                        <!-- Informations de contact -->
+                        <div class="contact-info">
+                            <h3>📧 Email</h3>
+                            <p><i class="fas fa-envelope"></i>  
+                                <a href="mailto:Kilian918@icloud.com">Kilian918@icloud.com</a>
+                            </p>
+                            
+                            <h3>📞 Téléphone</h3>
+                            <p><i class="fas fa-phone"></i>  
+                                <a href="tel:+1234567890">07 65 76 27 31</a>
+                            </p>
+                            
+                            <h3>💼 LinkedIn</h3>
+                            <p><i class="fab fa-linkedin"></i>  
+                                <a href="https://www.linkedin.com/in/kilian-furtado-fernandes-1290a226a" target="_blank">Mon profil LinkedIn</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
